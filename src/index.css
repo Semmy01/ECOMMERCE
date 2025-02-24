@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+body{
+  margin: 0px;
+}
+header {
+  display: flex;
+  background-color: #ede8e7;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 110px;
+  position: fixed;
+  width: 1240px;
+  z-index: 1;
+  border-bottom: 1px solid #B5ABAA;
+}
+.header-list li{
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0 20px;
+}
+.header-list {
+  list-style-type: none;
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: flex;
+}
+.header-icons{
+  display: flex;
+  list-style-type: none;
+}
+.header-icons li {
+  font-size: 22px;
+  margin: 0px 15px;
+}
+.first-main-section{
+  position: relative;
+  height: 700px;
+  background-color: #ede8e7;
+
+}
+.mini-image-container{
+  position: absolute;
+  top: 270px;
+  left: 100px;
+}
+.mini-image-container img{
+  width: 70px;
+  display: block;
+  margin: 11px;
+}
+.first-main-section::before {
+  content: "";
+  position: absolute;
+  left: 145px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #B5ABAA;
+}
+.woman{
+  height: 500px;
+  width: 470px;
+}
+.woman-image-container{
+  position: absolute;
+  top: 75px;
+  left: 250px;
+}
+.brand-first-name{
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: absolute;
+  font-size: 80px;
+  top: 130px;
+  left: 700px;
+  font-style: italic;
+  font-weight: 700;
+}
+.brand-second-name{
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: absolute;
+  top: 220px;
+  left: 800px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 80px;
+}
+.image-container{
+  position: absolute;
+  left: 760px;
+  top: 360px;
+}
+.image-container img{
+  width: 260px;
+  height: 260px;
+}
+.see-more-button{
+  position: absolute;
+  top: 370px;
+  left: 1050px;
+}
+.see-more{
+  background-color: #e36709;
+  color: white;
+  padding: 16px 52px;
+  border: none;
+}
+.social-media-container{
+  position: absolute;
+  top: 450px;
+  display: flex;
+  flex-direction: column;
+  left: 1300px;
+}
+.social-media-container img {
+  margin: 7px 0px;
+}
+.best-sellers-section{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 0px 30px;
+}
+.section-name{
+  font-size: 38px;
+  font-family: "Libre Bodoni", serif;
+}
+.view-all a{
+  color: #e36709;
+  font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+}
+.main-product-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 70px;
+}
+.product-container{
+  border : 1px solid #ede8e7;
+  width: 280px;
+}
+.product-content-wrapper{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.product-name{
+  font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+}
+.product-price{
+  font-family: "Libre Bodoni", serif;
+  font-size: 19px;
+  font-weight: 700px;
+}
+.product-img{
+  width:  220px;
+  height: 234px;
+}
+.add-to-cart{
+  background-color: #e36709;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.outlet-products{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 50px;
+  justify-content: space-between;
+  margin: 10px 70px;
+}
+.product-image{
+  width: 230px;
+  height: 334px;
+}
+.outlet-product-container{
+  border : 1px solid #ede8e7;
+  width: 250px;
+  margin-bottom: 15px;
+}
+.cart{
+  font-size: 30px;
+  position: relative;
+}
+.product-no{
+  background-color: #e36709;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+}
+
+.add-to-cart:hover{
+  cursor: pointer;
+}
