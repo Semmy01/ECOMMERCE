@@ -16,7 +16,7 @@ const BestSelllersProductSection = () => {
     <>
     <cartContext.Provider value={noOfItemsInCart}> 
       <Header/>
-      </cartContext.Provider>
+      
     <section className="best-sellers-section">
       <div className="section-name">Bestsellers</div>
       <div className="view-all">
@@ -38,6 +38,7 @@ const BestSelllersProductSection = () => {
         ))
       }
     </section>
+    </cartContext.Provider>
     </>
   )
 }
