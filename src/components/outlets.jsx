@@ -1,7 +1,13 @@
 import { outletProduts } from "./products"
 import convertPrice from "./priceConverter"
+// import { useContext } from "react"
+// import { cartContext } from "./best-sellers"
 
-const Outlets = () => {
+const Outlets = ({items , addToCart}) => {
+
+// const [noOfItemsInCart , setNoOfItemsInCart] = useContext(cartContext)
+console.log(items)
+
   return (
     <>
     <section className="best-sellers-section">
@@ -21,7 +27,7 @@ const Outlets = () => {
               <img className="product-image" src={product.image} alt="image-product" />
               <p className="product-name">{product.name.toLocaleUpperCase()}</p>
               <p className="product-price">{convertPrice(product.price)}</p>
-              <button className="add-to-cart">Add To Cart</button>
+              <button onClick={() => addToCart()} className="add-to-cart">Add To Cart</button>
             </div>
           </div>
         ))

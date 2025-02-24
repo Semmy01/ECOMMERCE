@@ -1,21 +1,24 @@
 import convertPrice from "./priceConverter";
 import { bestSellersProducts } from "./products";
 import { useState } from "react";
-import { createContext } from "react";
 import {Header} from "./header";
+import Outlets from "./outlets";
 
-export const cartContext = createContext()
+
 
 const BestSelllersProductSection = () => {
 
  let [ noOfItemsInCart , setNoOfItemsInCart] = useState(0)
  console.log(noOfItemsInCart)
 
+ function increaseCart (){
+  setNoOfItemsInCart(noOfItemsInCart + 1)
+ }
+
 
   return (
     <>
-    <cartContext.Provider value={noOfItemsInCart}> 
-      <Header/>
+      <Header items={noOfItemsInCart}/>
       
     <section className="best-sellers-section">
       <div className="section-name">Bestsellers</div>
@@ -32,17 +35,18 @@ const BestSelllersProductSection = () => {
             <img className="product-img" src={product.image} alt="product-image" />
             <p className="product-name">{product.name.toLocaleUpperCase()}</p>
             <p className="product-price">{convertPrice(product.price)}</p>
-            <button onClick={() => setNoOfItemsInCart(noOfItemsInCart+1)} className="add-to-cart">Add To Cart</button>
+            <button onClick={() => increaseCart()} className="add-to-cart">Add To Cart</button>
           </div>
          </div>
         ))
       }
     </section>
-    </cartContext.Provider>
+    <Outlets items={noOfItemsInCart} addToCart={increaseCart}/>
     </>
   )
 }
 
 export default BestSelllersProductSection
+
 
 

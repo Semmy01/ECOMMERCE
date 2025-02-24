@@ -1,11 +1,9 @@
 import "../index.css"
-import { useContext  } from "react"
-import { cartContext  } from "./best-sellers"
 
-const Header = () => {
 
-	const noOfItemsInCart = useContext(cartContext)
+const Header = ({items}) => {
 
+	
 	return (
 		<header >
 			<div>
@@ -28,7 +26,7 @@ const Header = () => {
 			</div>
 			<div className="cart">
 			🛒
-			<div className="product-no">{noOfItemsInCart }</div>
+			<div className="product-no">{items}</div>
 			</div>
 			
 		</header>
