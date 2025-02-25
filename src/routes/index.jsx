@@ -1,12 +1,12 @@
-import convertPrice from "./priceConverter";
-import { bestSellersProducts } from "./products";
+import convertPrice from "../utilities/priceConverter";
+import { bestSellersProducts } from "../utilities/products";
 import { useState } from "react";
-import {Header} from "./header";
-import Outlets from "./outlets";
+import  Header from "./components/header";
+import Outlets from "./components/outlets";
+import { createFileRoute } from "@tanstack/react-router";
 
 
-
-const BestSelllersProductSection = () => {
+const Index = () => {
 
  let [ noOfItemsInCart , setNoOfItemsInCart] = useState(0)
  console.log(noOfItemsInCart)
@@ -46,7 +46,11 @@ const BestSelllersProductSection = () => {
   )
 }
 
-export default BestSelllersProductSection
+export default Index
+
+export const Route = createFileRoute('/')({
+  component : Index
+})
 
 
 

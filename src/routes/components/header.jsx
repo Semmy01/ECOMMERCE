@@ -1,5 +1,6 @@
-import "../index.css"
-
+import "../../../src/index.css"
+import { Link } from "@tanstack/react-router"
+import { createFileRoute } from "@tanstack/react-router"
 
 const Header = ({items}) => {
 
@@ -24,13 +25,18 @@ const Header = ({items}) => {
 					<li><i className="bi bi-person"></i></li>
 				</ul>
 			</div>
+			<Link to={'/cartPage'}>
 			<div className="cart">
 			🛒
 			<div className="product-no">{items}</div>
 			</div>
+			</Link>
 			
 		</header>
 	)
 }
 
-export {Header} 
+export default Header
+export const Route = createFileRoute('/components/header')({
+	component : Header
+})

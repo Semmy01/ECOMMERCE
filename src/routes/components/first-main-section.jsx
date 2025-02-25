@@ -1,4 +1,6 @@
-export default function Firstsection() {
+import { createFileRoute } from "@tanstack/react-router"
+
+export  function Firstsection() {
   return (
     <section className="first-main-section">
       <div className="mini-image-container">
@@ -29,8 +31,12 @@ export default function Firstsection() {
       <div className="social-media-container"> 
         <img src="/fb.png" alt="" />
         <img src="/ig.png" alt="" />
-        <img src="linked.png" alt="" />
+        <img src="linked.png" alt=""/>
       </div>
     </section>
   )
 }
+
+export const Route = createFileRoute('/components/first-main-section')({
+  component : Firstsection
+})

@@ -1,7 +1,8 @@
-import { outletProduts } from "./products"
-import convertPrice from "./priceConverter"
+import { outletProduts } from "../../utilities/products"
+import convertPrice from "../../utilities/priceConverter"
 // import { useContext } from "react"
 // import { cartContext } from "./best-sellers"
+import { createFileRoute } from "@tanstack/react-router"
 
 const Outlets = ({items , addToCart}) => {
 
@@ -38,3 +39,6 @@ console.log(items)
 }
 
 export default Outlets
+export const Route = createFileRoute('/components/outlets')({
+  component : Outlets
+})
