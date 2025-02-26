@@ -4,17 +4,21 @@ import { useState } from "react";
 import  Header from "./components/header";
 import Outlets from "./components/outlets";
 import { createFileRoute } from "@tanstack/react-router";
-
+import CartPage from "./cartPage";
 
 const Index = () => {
 
  let [ noOfItemsInCart , setNoOfItemsInCart] = useState(0)
-//  console.log(noOfItemsInCart)
+ const [ cartItems , setCartItems ] = useState([])
 
  function increaseCart (){
   setNoOfItemsInCart(noOfItemsInCart + 1)
  }
 
+ const getCart = (product) => {
+  increaseCart()
+  setCartItems([...cartItems , product])
+ }
 
   return (
     <>
@@ -29,24 +33,26 @@ const Index = () => {
 
     <section className="main-product-container">
       {
-        bestSellersProducts.map((product , index) => (
+        bestSellersProducts.map((product ) => (
          <div key={product.product_id} className="product-container" >
            <div className="product-content-wrapper">
             <img className="product-img" src={product.image} alt="product-image" />
             <p className="product-name">{product.name.toLocaleUpperCase()}</p>
             <p className="product-price">{convertPrice(product.price)}</p>
-            <button onClick={() => increaseCart()} className="add-to-cart">Add To Cart</button>
+            <button onClick={() => getCart(product)} className="add-to-cart">Add To Cart</button>
           </div>
          </div>
         ))
       }
     </section>
-    <Outlets items={noOfItemsInCart} addToCart={increaseCart}/>
+    <Outlets  getCart={getCart} cartItems={cartItems}/>
+    <CartPage cartItems={cartItems}/>
     </>
   )
 }
 
 export default Index
+
 
 export const Route = createFileRoute('/')({
   component : Index

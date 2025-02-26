@@ -218,7 +218,47 @@ header {
   animation: cartanime infinite ease-out 3s;
 }
 
+.cart-item-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-wrapper{
+  border-bottom: 1px solid #B5ABAA;
+  height: 120px;
+  padding: 20px 0;
+}
+.cart-item-wrapper img{
+  width: 100px;
+  border: 1px solid #B5ABAA;
+  border-radius: 50%;
+}
 
+.check-out-section{
+  margin-top: 70px;
+ margin-left: 250px;
+ border: 1px solid #B5ABAA;
+ width: 1000px;
+}
+
+.price-displayer{
+  font-size: 20px;
+}
+
+.checkout{
+  text-align: center;
+  font-family: "Mulish", serif;
+  margin: 20px 0px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.total{
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
 
 @keyframes cartanime {
   0%{

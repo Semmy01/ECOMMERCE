@@ -1,6 +1,7 @@
 import "../../../src/index.css"
 import { Link } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
+import PropTypes from "prop-types"
 
 const Header = ({items}) => {
 
@@ -39,3 +40,7 @@ export default Header
 export const Route = createFileRoute('/components/header')({
 	component : Header
 })
+
+Header.propTypes = {
+	items : PropTypes.number
+}
