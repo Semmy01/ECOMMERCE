@@ -4,7 +4,7 @@ import { createFileRoute } from "@tanstack/react-router"
 
 const Header = ({items}) => {
 
-	
+
 	return (
 		<header >
 			<div>
@@ -26,12 +26,11 @@ const Header = ({items}) => {
 				</ul>
 			</div>
 			<Link to={'/cartPage'}>
-			<div className="cart">
-			🛒
-			<div className="product-no">{items}</div>
-			</div>
+				<div className={ 'cart-anime'}>
+					🛒
+					<div className="product-no">{items}</div>
+				</div>
 			</Link>
-			
 		</header>
 	)
 }

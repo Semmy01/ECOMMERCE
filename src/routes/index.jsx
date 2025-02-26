@@ -9,7 +9,7 @@ import { createFileRoute } from "@tanstack/react-router";
 const Index = () => {
 
  let [ noOfItemsInCart , setNoOfItemsInCart] = useState(0)
- console.log(noOfItemsInCart)
+//  console.log(noOfItemsInCart)
 
  function increaseCart (){
   setNoOfItemsInCart(noOfItemsInCart + 1)

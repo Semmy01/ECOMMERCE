@@ -7,7 +7,6 @@ import { createFileRoute } from "@tanstack/react-router"
 const Outlets = ({items , addToCart}) => {
 
 // const [noOfItemsInCart , setNoOfItemsInCart] = useContext(cartContext)
-console.log(items)
 
   return (
     <>

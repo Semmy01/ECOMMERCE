@@ -211,3 +211,25 @@ header {
 .add-to-cart:hover{
   cursor: pointer;
 }
+
+.cart-anime{
+  font-size: 30px;
+  position: relative;
+  animation: cartanime infinite ease-out 3s;
+}
+
+
+
+@keyframes cartanime {
+  0%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(10px);
+  } 
+}
