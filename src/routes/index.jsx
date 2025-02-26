@@ -30,7 +30,7 @@ const Index = () => {
     <section className="main-product-container">
       {
         bestSellersProducts.map((product , index) => (
-         <div key={index} className="product-container" >
+         <div key={product.product_id} className="product-container" >
            <div className="product-content-wrapper">
             <img className="product-img" src={product.image} alt="product-image" />
             <p className="product-name">{product.name.toLocaleUpperCase()}</p>

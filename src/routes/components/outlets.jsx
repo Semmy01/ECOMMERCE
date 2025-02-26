@@ -22,7 +22,7 @@ const Outlets = ({items , addToCart}) => {
     <section className="outlet-products ">
       {
         outletProduts.map((product , index) => (
-          <div key={index} className="outlet-product-container">
+          <div key={product.product_id} className="outlet-product-container">
             <div className="product-content-wrapper">
               <img className="product-image" src={product.image} alt="image-product" />
               <p className="product-name">{product.name.toLocaleUpperCase()}</p>
