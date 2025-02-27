@@ -259,7 +259,20 @@ header {
   justify-content: space-around;
   font-size: 20px;
 }
+.no-items{
+  text-align: center;
+  font-family: "Mulish", serif;
+  font-style: italic;
+}
 
+.remove{
+  background-color: #e36709;
+  color: white;
+  border: none;
+  padding: 10px 15px ;
+  border-radius: 5px;
+  cursor: pointer;
+}
 @keyframes cartanime {
   0%{
     transform: translateY(0);

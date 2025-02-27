@@ -46,7 +46,7 @@ const Index = () => {
       }
     </section>
     <Outlets  getCart={getCart} cartItems={cartItems}/>
-    <CartPage cartItems={cartItems}/>
+    <CartPage cartItems={cartItems} setCartItems={setCartItems} setNoOfItemsInCart={setNoOfItemsInCart} noOfItemsInCart={noOfItemsInCart}/>
     </>
   )
 }
