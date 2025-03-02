@@ -2,10 +2,20 @@ import { createFileRoute } from '@tanstack/react-router'
 import PropTypes from 'prop-types'; 
 import '../../src/index.css'
 import convertPrice from '../utilities/priceConverter';
+import Header from './components/header';
+import { useContext } from 'react';
+import CartContext from '../utilities/contexts/context';
 
 
-const CartPage = ({ cartItems , setCartItems , setNoOfItemsInCart , noOfItemsInCart}) => {
-  
+
+const CartPage = () => {
+
+const {noOfItemsInCart} = useContext(CartContext)
+const {setNoOfItemsInCart} = useContext(CartContext)
+const {cartItems} = useContext(CartContext)
+const {setCartItems} = useContext(CartContext)
+
+
   const totalAmount = cartItems.reduce((total, cartItem) => total + cartItem.price, 0);
 
   function reduceNoOfItems () {

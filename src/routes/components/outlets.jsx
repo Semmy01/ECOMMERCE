@@ -5,7 +5,7 @@ import convertPrice from "../../utilities/priceConverter"
 import { createFileRoute } from "@tanstack/react-router"
 import PropTypes from 'prop-types'; 
 
-const Outlets = ({ getCart }) => {
+const Outlets = ({ getCart  }) => {
 
 // const [noOfItemsInCart , setNoOfItemsInCart] = useContext(cartContext)
 
