@@ -5,6 +5,7 @@ import { Firstsection } from './components/first-main-section'
 import Index from '.'
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import CartContextProvider from '../utilities/contexts/cartContextProvider';
+import Header from './components/header';
 
 
 export const Route = createRootRoute({
@@ -15,7 +16,7 @@ function RootComponent() {
   return (
     <React.Fragment>
      <CartContextProvider>
-     {/* <Firstsection/> */}
+     <Header/>
       {/* <Index/> */}
       <Outlet />
       <TanStackRouterDevtools/>

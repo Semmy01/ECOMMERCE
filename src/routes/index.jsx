@@ -6,7 +6,7 @@ import Outlets from "./components/outlets";
 import { createFileRoute } from "@tanstack/react-router";
 import CartPage from "./cartPage";
 import CartContext from "../utilities/contexts/context";
-
+import { Firstsection } from "./components/first-main-section";
 
 
 const Index = () => {
@@ -32,7 +32,9 @@ const {setCartItems} = useContext(CartContext)
 
   return (
     <>
-        <Header items={noOfItemsInCart} />
+        <Header/>
+
+        <Firstsection/>
               
         <section className="best-sellers-section">
           <div className="section-name">Bestsellers</div>

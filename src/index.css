@@ -217,61 +217,114 @@ header {
   position: relative;
   animation: cartanime infinite ease-out 3s;
 }
-
-.cart-item-wrapper{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.main-wrapper{
-  border-bottom: 1px solid #B5ABAA;
-  height: 120px;
-  padding: 20px 0;
-}
-.cart-item-wrapper img{
-  width: 100px;
-  border: 1px solid #B5ABAA;
-  border-radius: 50%;
-}
-
 .check-out-section{
-  margin-top: 70px;
- margin-left: 250px;
- border: 1px solid #B5ABAA;
- width: 1000px;
+  margin-top: 130px;
 }
 
-.price-displayer{
-  font-size: 20px;
-}
-
-.checkout{
-  text-align: center;
-  font-family: "Mulish", serif;
-  margin: 20px 0px;
-  font-size: 20px;
-  font-style: italic;
-}
-
-.total{
-  padding: 20px 0;
+.checkout-main-wrapper{
   display: flex;
-  justify-content: space-around;
-  font-size: 20px;
-}
-.no-items{
-  text-align: center;
-  font-family: "Mulish", serif;
-  font-style: italic;
+  margin: 0px 70px ;
+  justify-content: space-between;
 }
 
+.order-summary-p{
+  font-family: 'Mulish';
+  font-size: 20px;
+  margin-left: 30px;
+}
+.order-summary{
+  border: 1px solid #B5ABAA;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  justify-content: space-between;
+  padding: 10px 20px 10px 0px;
+  width: 830px;
+  margin-bottom: 10px;
+}
+.payment-summary{
+  border: 1px solid #B5ABAA;
+  width: 400px;
+  padding-bottom: 20px;
+}
+.order-summary-item-name{
+  font-family: 'Mulish';
+} 
+.order-summary-item-price{
+  font-family: 'Mulish';
+} 
 .remove{
   background-color: #e36709;
   color: white;
   border: none;
-  padding: 10px 15px ;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.order-summary-image img{
+  height: 100px;
+  width: 100px;
+  border: 1px solid #B5ABAA;
+  margin-left: 30px;
+}
+.wrapper img{
+  height: 80px;
+  width: 80px;
+  border: 1px solid #B5ABAA;
+}
+
+.wrapper{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.description-wrapper{
+  margin-left: 20px;
+}
+.coupon-section{
+  margin: 20px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #b7bac0;
+  border-top: 1px solid #b7bac0;
+  padding: 20px 0px;
+}
+.coupon-input{
+  width: 220px;
+  height: 30px;
+}
+.add-coupon{
+  background-color: #b7bac0;
+  color: white;
+  border: none;
+  margin-left: 20px;
+  padding: 10px 15px;
+}
+.coupon-input::placeholder{
+  padding-left: 10px;
+}
+.total-section{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Mulish';
+}
+.total-price{
+  font-size: 18px;
+}
+.check{
+  margin-top: 30px;
+  background-color: #e36709;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.checkout-button-wrapper{
+  display: flex;
+  justify-content: center;
 }
 @keyframes cartanime {
   0%{

@@ -2,8 +2,12 @@ import "../../../src/index.css"
 import { Link } from "@tanstack/react-router"
 import { createFileRoute } from "@tanstack/react-router"
 import PropTypes from "prop-types"
+import CartContext from "../../utilities/contexts/context"
+import { useContext } from "react"
 
-const Header = ({items}) => {
+const Header = () => {
+
+	const {noOfItemsInCart} = useContext(CartContext)
 
 
 	return (
@@ -27,9 +31,9 @@ const Header = ({items}) => {
 				</ul>
 			</div>
 			<Link to={'/cartPage'}>
-				<div className={ 'cart-anime'}>
+				<div className={ 'cart'}>
 					🛒
-					<div className="product-no">{items}</div>
+					<div className="product-no">{noOfItemsInCart}</div>
 				</div>
 			</Link>
 		</header>

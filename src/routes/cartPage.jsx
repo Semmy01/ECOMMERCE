@@ -38,37 +38,53 @@ const {setCartItems} = useContext(CartContext)
         </div>
       ) : (
         <section className='check-out-section'>
-        <div className='checkout'>CHECKOUT</div>
+          <p className='order-summary-p'>Order Summary</p>
+        <div className='checkout-main-wrapper'>
+        <div>
         {
-          cartItems.map((cartItem, index) => (
-            <div className='main-wrapper' key={index}>
-              <div className='cart-item-wrapper'>
-                <img src={cartItem.image} alt="item-image" />
-                <div className='price-displayer'>
-                  {convertPrice(cartItem.price)}
-                </div>
-                <div>
-                  <button onClick={() => removeItem(cartItem.product_id)} className='remove'>Remove</button>
-                </div>
-              </div>
+          cartItems.map((cartItem) => (
+            <div className='order-summary' key={cartItem.product_id}>
+              <div className='order-summary-image'><img src={cartItem.image} alt="" /></div>
+              <div className='order-summary-item-name'>{cartItem.name.toUpperCase()}</div>
+              <div className='order-summary-item-price'>{convertPrice(cartItem.price)}</div>
+              <button onClick={() => removeItem(cartItem.product_id)} className='remove'>Remove</button>
             </div>
           ))
         }
-
-        <div className='total'> 
-          <div>
-            Total :
-          </div>
-          <div>
+        </div>
+          <div className='payment-summary'>
             {
-              convertPrice(totalAmount)
+              cartItems.map((cartItem) => (
+                <div>
+                  <div className='wrapper'>
+                    <img src={cartItem.image} alt="" />
+                    <div className='description-wrapper'>
+                      <p className='order-summary-item-name'>{cartItem.name.toUpperCase()}</p>
+                      <p className='order-summary-item-price'>{convertPrice(cartItem.price)}</p>
+                    </div>
+                  </div>
+                </div>
+              ))
             }
+            <section className='coupon-section'>
+              <input type="text" className='coupon-input' placeholder='Coupon code'/>
+              <button className='add-coupon'>Add Coupon</button>
+            </section>
+
+            <section className='total-section'>
+              <div>Total</div>
+              <div className='total-price'>{convertPrice(totalAmount)}</div>
+            </section>
+
+            <div className='checkout-button-wrapper'>
+              <button className='check'>Checkout</button>
+            </div>
           </div>
         </div>
+
       </section>
       )
-    }
-      
+    } 
     </>
   )
 }

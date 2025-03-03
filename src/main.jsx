@@ -7,13 +7,14 @@ import { createRoot } from 'react-dom/client'
 import { createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import { RouterProvider } from '@tanstack/react-router'
-import { Firstsection } from './routes/components/first-main-section'
+// import { Firstsection } from './routes/components/first-main-section'
+import Header from './routes/components/header'
 
 const router = createRouter({routeTree})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Firstsection/>
+    {/* <Firstsection/> */}
     <RouterProvider router={router} />
   </StrictMode>
 )
