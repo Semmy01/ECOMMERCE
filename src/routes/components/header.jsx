@@ -4,17 +4,25 @@ import { createFileRoute } from "@tanstack/react-router"
 import PropTypes from "prop-types"
 import CartContext from "../../utilities/contexts/context"
 import { useContext } from "react"
+import { signOut } from "firebase/auth"
+import { auth } from "../../utilities/firebase-config/config"
 
 const Header = () => {
 
 	const {noOfItemsInCart} = useContext(CartContext)
 
+	const logOut = () => {
+		signOut(auth)
+	}
+
 
 	return (
 		<header >
+			<Link to={'/'}>
 			<div>
 				<img src="/logo.png" alt="logo" />
 			</div>
+			</Link>
 			<div>
 				<ul className="header-list">
 					<li>Jewelry</li>
@@ -36,6 +44,7 @@ const Header = () => {
 					<div className="product-no">{noOfItemsInCart}</div>
 				</div>
 			</Link>
+			<button onClick={() => logOut()} className="check">Sign Out</button>
 		</header>
 	)
 }

@@ -11,7 +11,10 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SignInImport } from './routes/signIn'
+import { Route as LogInImport } from './routes/logIn'
 import { Route as CartPageImport } from './routes/cartPage'
+import { Route as AddressImport } from './routes/address'
 import { Route as IndexImport } from './routes/index'
 import { Route as ComponentsOutletsImport } from './routes/components/outlets'
 import { Route as ComponentsHeaderImport } from './routes/components/header'
@@ -19,9 +22,27 @@ import { Route as ComponentsFirstMainSectionImport } from './routes/components/f
 
 // Create/Update Routes
 
+const SignInRoute = SignInImport.update({
+  id: '/signIn',
+  path: '/signIn',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LogInRoute = LogInImport.update({
+  id: '/logIn',
+  path: '/logIn',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const CartPageRoute = CartPageImport.update({
   id: '/cartPage',
   path: '/cartPage',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AddressRoute = AddressImport.update({
+  id: '/address',
+  path: '/address',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -62,11 +83,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/address': {
+      id: '/address'
+      path: '/address'
+      fullPath: '/address'
+      preLoaderRoute: typeof AddressImport
+      parentRoute: typeof rootRoute
+    }
     '/cartPage': {
       id: '/cartPage'
       path: '/cartPage'
       fullPath: '/cartPage'
       preLoaderRoute: typeof CartPageImport
+      parentRoute: typeof rootRoute
+    }
+    '/logIn': {
+      id: '/logIn'
+      path: '/logIn'
+      fullPath: '/logIn'
+      preLoaderRoute: typeof LogInImport
+      parentRoute: typeof rootRoute
+    }
+    '/signIn': {
+      id: '/signIn'
+      path: '/signIn'
+      fullPath: '/signIn'
+      preLoaderRoute: typeof SignInImport
       parentRoute: typeof rootRoute
     }
     '/components/first-main-section': {
@@ -97,7 +139,10 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/address': typeof AddressRoute
   '/cartPage': typeof CartPageRoute
+  '/logIn': typeof LogInRoute
+  '/signIn': typeof SignInRoute
   '/components/first-main-section': typeof ComponentsFirstMainSectionRoute
   '/components/header': typeof ComponentsHeaderRoute
   '/components/outlets': typeof ComponentsOutletsRoute
@@ -105,7 +150,10 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/address': typeof AddressRoute
   '/cartPage': typeof CartPageRoute
+  '/logIn': typeof LogInRoute
+  '/signIn': typeof SignInRoute
   '/components/first-main-section': typeof ComponentsFirstMainSectionRoute
   '/components/header': typeof ComponentsHeaderRoute
   '/components/outlets': typeof ComponentsOutletsRoute
@@ -114,7 +162,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/address': typeof AddressRoute
   '/cartPage': typeof CartPageRoute
+  '/logIn': typeof LogInRoute
+  '/signIn': typeof SignInRoute
   '/components/first-main-section': typeof ComponentsFirstMainSectionRoute
   '/components/header': typeof ComponentsHeaderRoute
   '/components/outlets': typeof ComponentsOutletsRoute
@@ -124,21 +175,30 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/address'
     | '/cartPage'
+    | '/logIn'
+    | '/signIn'
     | '/components/first-main-section'
     | '/components/header'
     | '/components/outlets'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/address'
     | '/cartPage'
+    | '/logIn'
+    | '/signIn'
     | '/components/first-main-section'
     | '/components/header'
     | '/components/outlets'
   id:
     | '__root__'
     | '/'
+    | '/address'
     | '/cartPage'
+    | '/logIn'
+    | '/signIn'
     | '/components/first-main-section'
     | '/components/header'
     | '/components/outlets'
@@ -147,7 +207,10 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AddressRoute: typeof AddressRoute
   CartPageRoute: typeof CartPageRoute
+  LogInRoute: typeof LogInRoute
+  SignInRoute: typeof SignInRoute
   ComponentsFirstMainSectionRoute: typeof ComponentsFirstMainSectionRoute
   ComponentsHeaderRoute: typeof ComponentsHeaderRoute
   ComponentsOutletsRoute: typeof ComponentsOutletsRoute
@@ -155,7 +218,10 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AddressRoute: AddressRoute,
   CartPageRoute: CartPageRoute,
+  LogInRoute: LogInRoute,
+  SignInRoute: SignInRoute,
   ComponentsFirstMainSectionRoute: ComponentsFirstMainSectionRoute,
   ComponentsHeaderRoute: ComponentsHeaderRoute,
   ComponentsOutletsRoute: ComponentsOutletsRoute,
@@ -172,7 +238,10 @@ export const routeTree = rootRoute
       "filePath": "__root.jsx",
       "children": [
         "/",
+        "/address",
         "/cartPage",
+        "/logIn",
+        "/signIn",
         "/components/first-main-section",
         "/components/header",
         "/components/outlets"
@@ -181,8 +250,17 @@ export const routeTree = rootRoute
     "/": {
       "filePath": "index.jsx"
     },
+    "/address": {
+      "filePath": "address.jsx"
+    },
     "/cartPage": {
       "filePath": "cartPage.jsx"
+    },
+    "/logIn": {
+      "filePath": "logIn.jsx"
+    },
+    "/signIn": {
+      "filePath": "signIn.jsx"
     },
     "/components/first-main-section": {
       "filePath": "components/first-main-section.jsx"

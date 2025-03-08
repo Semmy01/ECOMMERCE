@@ -1,12 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
-import PropTypes from 'prop-types'; 
+import PropTypes, { func } from 'prop-types'; 
 import '../../src/index.css'
 import convertPrice from '../utilities/priceConverter';
 import Header from './components/header';
-import { useContext } from 'react';
+import { useContext, useEffect , useState } from 'react';
 import CartContext from '../utilities/contexts/context';
-
-
+import { Link } from '@tanstack/react-router';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../utilities/firebase-config/config';
+import { useNavigate } from '@tanstack/react-router';
 
 const CartPage = () => {
 
@@ -14,7 +16,8 @@ const {noOfItemsInCart} = useContext(CartContext)
 const {setNoOfItemsInCart} = useContext(CartContext)
 const {cartItems} = useContext(CartContext)
 const {setCartItems} = useContext(CartContext)
-
+const [ user , setUser ] = useState(null)
+const navigate = useNavigate()
 
   const totalAmount = cartItems.reduce((total, cartItem) => total + cartItem.price, 0);
 
@@ -28,8 +31,24 @@ const {setCartItems} = useContext(CartContext)
     setCartItems(remainItems)
     console.log(noOfItemsInCart)
   }
+
+  useEffect(() => {
+      onAuthStateChanged(auth , (user) => {
+        setUser(user)
+        if(user){
+          console.log('hello user')
+        } else {
+          console.log('user not found')
+        }
+      })
+    } , []
+  )
+
+
   return (
     <>
+
+    <Header/>
     {
       cartItems.length === 0? 
       (
@@ -77,7 +96,8 @@ const {setCartItems} = useContext(CartContext)
             </section>
 
             <div className='checkout-button-wrapper'>
-              <button className='check'>Checkout</button>
+                {/* <button className='check'>{user? <Link to={'/address'}>Checkout</Link> : <Link to={'/signIn'}>Checkout</Link>}</button> */}
+                <button className='check' onClick={() => {user? navigate({to : '/address'}) : navigate({to : '/signIn'})}}>Checkout</button>
             </div>
           </div>
         </div>

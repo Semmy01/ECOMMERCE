@@ -16,8 +16,7 @@ function RootComponent() {
   return (
     <React.Fragment>
      <CartContextProvider>
-     <Header/>
-      {/* <Index/> */}
+     {/* <Header/> */}
       <Outlet />
       <TanStackRouterDevtools/>
      </CartContextProvider>

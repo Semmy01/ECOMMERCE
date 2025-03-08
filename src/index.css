@@ -326,6 +326,74 @@ header {
   display: flex;
   justify-content: center;
 }
+
+.create-account-section{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #B5ABAA;
+}
+.sign-in-wrapper{
+  background-color: white;
+  padding: 30px 80px;
+  text-align: center;
+}
+.sign-in-wrapper input {
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 400px;
+  font-size: 18px;
+  padding: 10px 15px;
+  font-family: 'Mulish';
+  margin-left: 20px;
+}
+
+.create-account{
+  background-color: #e36709;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-account:hover{
+  background-color: #d37229;
+}
+
+.welcome{
+  font-size: 30px;
+  font-family: 'Libre Bodoni';
+  font-style: italic;
+  color: #e36709;
+}
+
+.typewriter{
+  margin-bottom: 30px;
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; 
+  margin: 0 auto; 
+  animation: typing 2.5s steps(90, end);
+  letter-spacing: 1px;
+}
+.sign-in-inputs:focus{
+  outline: none;
+}
+
+.login-section{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #B5ABAA;
+}
+
+
 @keyframes cartanime {
   0%{
     transform: translateY(0);
@@ -339,3 +407,10 @@ header {
     transform: translateY(10px);
   } 
 }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
