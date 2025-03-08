@@ -36,7 +36,7 @@ const navigate = useNavigate()
       onAuthStateChanged(auth , (user) => {
         setUser(user)
         if(user){
-          console.log('hello user')
+          console.log('hello user' , user) 
         } else {
           console.log('user not found')
         }

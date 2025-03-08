@@ -37,7 +37,7 @@ function createUser() {
       console.log(err)
     }
   }
-  console.log(auth?.currentUser?.email)
+  // console.log(auth?.currentUser?.email)
 
 
  console.log(user)

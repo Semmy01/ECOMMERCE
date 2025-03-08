@@ -393,6 +393,39 @@ header {
   background-color: #B5ABAA;
 }
 
+.login-wrapper{
+  background-color: white;
+  padding: 50px 80px;
+  text-align: center;
+}
+
+.login-inputs{
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 400px;
+  font-size: 18px;
+  padding: 10px 15px;
+  font-family: 'Mulish';
+  margin-left: 20px;
+}
+
+.login-inputs:focus{
+  outline: none;
+}
+
+.log-in-account{
+  background-color: #e36709;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  margin: 30px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.log-in-account:hover{
+  background-color: #d37229;
+}
 
 @keyframes cartanime {
   0%{
