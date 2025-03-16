@@ -4,6 +4,7 @@ import { auth } from '../utilities/firebase-config/config'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useNavigate } from '@tanstack/react-router'
+import '../index.css'
 
 
 export const Route = createFileRoute('/signIn')({
